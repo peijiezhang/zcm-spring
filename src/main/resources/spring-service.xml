@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd
+        http://code.alibabatech.com/schema/dubbo
+   	    http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+   	    http://www.springframework.org/schema/mvc
+   	    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+   	    http://www.springframework.org/schema/task
+   	    http://www.springframework.org/schema/task/spring-task.xsd"
+        >
+
+    <bean id="userLoginDao" class="com.zcm.dao.impl.UserLoginDaoImpl"></bean>
+
+    <bean id="userLoginService" class="com.zcm.service.impl.UserLoginServiceImpl">
+           <!-- 一个简单的xml注入  ref 代表真实的对象实例-->
+          <property name="userLoginDao" ref="userLoginDao"></property>
+
+    </bean>
+    <bean id="userLoginService2" class="com.zcm.service.impl.UserLoginServiceImpl"></bean>
+
+
+
+</beans>
